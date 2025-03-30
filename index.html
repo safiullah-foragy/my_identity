@@ -3,318 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD SAFIULLAH FORAJY</title>
+    <title>MD SAFIULLAH FORAJY | CSE Student</title>
     <style>
+        :root {
+            --primary: #2A5C82;
+            --secondary: #5DA399;
+            --accent: #FF6B6B;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #f0f2f5;
-            line-height: 1.6;
-            min-height: 100vh;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
         }
 
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header p {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.4;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #2c3e50;
-            transition: transform 0.3s ease;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
 
         .profile-img:hover {
             transform: scale(1.05);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 30px auto 50px;
-            padding: 20px;
-        }
-
-        .section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
+        .header-content {
+            max-width: 600px;
         }
 
         h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         h2 {
-            color: #3498db;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
         }
 
-        .contact-info {
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
         }
 
-        .contact-item {
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
             display: flex;
-            align-items: baseline;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        .contact-item strong {
-            min-width: 80px;
-            color: #2c3e50;
-            font-weight: 600;
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .social-links a {
-            text-decoration: none;
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
             color: white;
-            background-color: #3498db;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s;
         }
 
-        .social-links a:hover {
-            background-color: #2980b9;
-        }
-
-        /* Recent Activity Styles */
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #3498db;
-            animation: progress 2s ease-in-out infinite;
-        }
-
-        .activity-description {
-            margin: 20px 0;
-            font-style: italic;
-            color: #666;
-            min-height: 40px;
-            font-size: 1.1em;
-        }
-
-        .image-carousel {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-
-        .carousel-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            animation: carousel 20s infinite;
-        }
-
-        @keyframes progress {
-            0% { width: 0; }
-            50% { width: 100%; }
-            100% { width: 0; }
-        }
-
-        @keyframes carousel {
-            0% { opacity: 0; transform: translateX(100%); }
-            5% { opacity: 1; transform: translateX(0); }
-            20% { opacity: 1; transform: translateX(0); }
-            25% { opacity: 0; transform: translateX(-100%); }
-            100% { opacity: 0; transform: translateX(-100%); }
+        .social-link:hover {
+            background: var(--secondary);
         }
 
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            
-            .header p {
-                font-size: 1em;
+            h1 {
+                font-size: 2rem;
             }
             
             .profile-img {
-                width: 120px;
-                height: 120px;
-                margin-top: 15px;
+                width: 180px;
+                height: 180px;
             }
             
-            .image-carousel {
-                height: 150px;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                gap: 5px;
+            .container {
+                margin-top: -30px;
             }
         }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div>
-            <h1>MD SAFIULLAH FORAJY</h1>
-            <p>Studying Computer Science and Engineering at Patuakhali Science and Technology University</p>
+    <header class="header">
+        <div class="profile-container">
+            <img src="./photo/your-profile-image.jpg" alt="Profile" class="profile-img">
+            <div class="header-content">
+                <h1>MD SAFIULLAH FORAJY</h1>
+                <p class="tagline">Computer Science & Engineering Student</p>
+                <p>Patuakhali Science and Technology University</p>
+            </div>
         </div>
-        <img src="./photo/your-profile-image.jpg" alt="Profile Picture" class="profile-img">
-    </div>
+    </header>
 
     <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Email:</strong>
-                    <span>safiullahforagy@gmail.com</span>
+        <div class="grid">
+            <div class="card">
+                <h2>About Me</h2>
+                <ul class="contact-list">
+                    <li>
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong>
+                            <p>safiullahforagy@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>01312036374</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Address</strong>
+                            <p>Rayapur, Nalchity, Jhalokathi</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>PSTU</h3>
+                        <p>BSc in CSE<br>2021 - Present</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Govt. Sayed Hatem Ali College</h3>
+                        <p>HSC (GPA 5.0)<br>2018 - 2020</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Rayapur S.A. Latif School</h3>
+                        <p>SSC (GPA 5.0)<br>2016 - 2018</p>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <strong>Phone:</strong>
-                    <span>01312036374</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Coding Profiles</h2>
+                <div class="social-links">
+                    <a href="https://codeforces.com/profile/safiullahforagy" class="social-link" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                        Codeforces
+                    </a>
+                    <a href="https://github.com/safiullah-foragy" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
                 </div>
-                <div class="contact-item">
-                    <strong>Address:</strong>
-                    <span>Village: Rayapur, Upazilla: Nalchity, District: Jhalokathi</span>
+            </div>
+
+            <div class="card">
+                <h2>Connect With Me</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/md-safiullah-1970922a2/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100038036010802" class="social-link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Rest of the sections remain the same -->
-        <div class="section">
-            <h2>Education</h2>
-            <div class="info-item">
-                <strong>University:</strong> Patuakhali Science and Technology University<br>
-                <strong>College:</strong> Govt. Sayed Hatem Ali College<br>
-                <strong>School:</strong> Rayapur Sayed Abdul Latif Secondary School<br>
-                <strong>HSC Result:</strong> Science GPA 5<br>
-                <strong>SSC Result:</strong> GPA 5
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Competitive Programming</h2>
-            <p>Passionate competitive programmer with active participation in programming contests</p>
-            <div class="social-links">
-                <a href="https://codeforces.com/profile/safiullahforagy" target="_blank">Codeforces Profile</a>
-                <a href="https://github.com/safiullah-foragy" target="_blank">GitHub Profile</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Connect With Me</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/md-safiullah-1970922a2/" target="_blank">LinkedIn</a>
-                <a href="https://www.facebook.com/profile.php?id=100038036010802" target="_blank">Facebook</a>
-                <a href="https://github.com/safiullah-foragy" target="_blank">GitHub</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Recent Activities</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <div class="activity-description">
-                Currently: Practicing Dynamic Programming Problems on Codeforces
-            </div>
-            <div class="image-carousel">
-                <img src="./activity1.jpg" class="carousel-image" alt="Coding Activity">
-                <img src="./activity2.jpg" class="carousel-image" alt="Contest Participation">
-                <img src="./activity3.jpg" class="carousel-image" alt="Project Work">
-                <img src="./activity4.jpg" class="carousel-image" alt="Team Collaboration">
-                <img src="./activity5.jpg" class="carousel-image" alt="Problem Solving">
             </div>
         </div>
     </div>
 
     <script>
-        // Section animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section');
-            
-            sections.forEach((section, index) => {
-                setTimeout(() => {
-                    section.style.opacity = 1;
-                    section.style.transform = 'translateY(0)';
-                }, index * 200);
+        // Add intersection observer for scroll animations
+        const cards = document.querySelectorAll('.card');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
         });
 
-        // Initial styles for animation
-        window.onload = function() {
-            document.querySelectorAll('.section').forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'all 0.5s ease-out';
-            });
-        };
-
-        // Activity updates
-        const activities = [
-            "Solving Codeforces Round #950 (Div. 3) problems",
-            "Working on Data Structures and Algorithms",
-            "Participating in programming contests",
-            "Developing new projects on GitHub",
-            "Collaborating with coding community"
-        ];
-
-        let currentActivity = 0;
-        const activityElement = document.querySelector('.activity-description');
-
-        function updateActivity() {
-            activityElement.textContent = `Currently: ${activities[currentActivity]}`;
-            currentActivity = (currentActivity + 1) % activities.length;
-        }
-
-        setInterval(updateActivity, 5000);
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>
