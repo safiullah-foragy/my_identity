@@ -6,154 +6,129 @@
     <title>MD SAFIULLAH FORAJY | CSE Student</title>
     <style>
         :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --dark: #14213d;
-            --light: #f8f9fa;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --accent: #ec4899;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --header-bg: linear-gradient(135deg, #1e3a8a, #0f172a);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* Improved Header */
         .header {
-            background: var(--gradient);
+            background: var(--header-bg);
             color: white;
-            padding: 5rem 2rem 8rem;
-            text-align: center;
+            padding: 3rem 2rem 4rem;
             position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--light);
-            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
-        }
-
-        .profile-container {
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .profile-section {
+            flex-shrink: 0;
         }
 
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255,255,255,0.2);
             object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.05) rotate(5deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            background: linear-gradient(to right, white, #f8f9fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: white;
+            letter-spacing: -0.5px;
         }
 
-        .tagline {
+        .title {
             font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
+            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
-        .tagline::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 3px;
+        .university {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
+        .university i {
+            color: var(--accent);
+        }
+
+        .header-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-item i {
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Rest of your styles... */
         .container {
             max-width: 1200px;
-            margin: -80px auto 3rem;
+            margin: -2rem auto 3rem;
             padding: 0 2rem;
-            position: relative;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: none;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--gradient);
-            transition: width 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .card:hover::before {
-            width: 8px;
         }
 
         h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             position: relative;
-            display: inline-block;
         }
 
         h2::after {
@@ -161,398 +136,338 @@
             position: absolute;
             bottom: -8px;
             left: 0;
-            width: 50px;
-            height: 4px;
+            width: 40px;
+            height: 3px;
             background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .contact-list {
-            list-style: none;
-        }
-
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1.2rem;
-            background: rgba(67, 97, 238, 0.05);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border-left: 3px solid var(--primary);
-        }
-
-        .contact-list li:hover {
-            transform: translateX(5px);
-            background: rgba(67, 97, 238, 0.1);
-        }
-
-        .icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--gradient);
             border-radius: 3px;
         }
 
+        /* Education Section */
+        .education-section {
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--primary);
+        }
+
         .timeline-item {
-            position: relative;
             margin-bottom: 2rem;
-            padding-left: 2rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: 2px;
-            top: 5px;
-            width: 18px;
-            height: 18px;
-            background: var(--accent);
+            left: -0.5rem;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
+            background: var(--accent);
         }
 
         .timeline-item h3 {
-            color: var(--dark);
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
         }
 
         .timeline-item p {
-            color: #666;
-            margin-bottom: 0.5rem;
+            color: #64748b;
+            margin-bottom: 0.3rem;
         }
 
-        .timeline-item .date {
-            color: var(--primary);
-            font-weight: 500;
+        .date {
             font-size: 0.9rem;
+            color: #94a3b8;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.9rem 1.8rem;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-        }
-
-        .social-link i {
-            font-size: 1.2rem;
+        /* Skills Section */
+        .skills-section {
+            margin-bottom: 3rem;
         }
 
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .skill-tag {
-            background: rgba(67, 97, 238, 0.1);
-            color: var(--primary);
-            padding: 0.6rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
-            border: 1px solid rgba(67, 97, 238, 0.3);
-            transition: all 0.3s ease;
         }
 
-        .skill-tag:hover {
+        .achievements-list {
+            padding-left: 1.5rem;
+        }
+
+        .achievements-list li {
+            margin-bottom: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Connect Me Section */
+        .connect-section {
+            margin-bottom: 3rem;
+        }
+
+        .connect-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .connect-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
             background: var(--primary);
             color: white;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            background: var(--dark);
-            color: white;
-            margin-top: 4rem;
-            position: relative;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-info {
-            text-align: left;
-        }
-
-        .footer-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-info p {
-            opacity: 0.8;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
             font-size: 0.95rem;
         }
 
-        .footer-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid white;
-            object-fit: cover;
+        .connect-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
-        .copyright {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .connect-link i {
+            font-size: 1rem;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            margin-bottom: 3rem;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
             font-size: 0.9rem;
-            opacity: 0.7;
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .header {
-                padding: 3rem 1rem 6rem;
-                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .container {
-                margin-top: -50px;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .card {
-                padding: 2rem;
-            }
+        .project-link:hover {
+            background: var(--primary-dark);
+        }
 
-            .footer-content {
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
                 flex-direction: column;
+                text-align: center;
                 gap: 1.5rem;
             }
             
-            .footer-info {
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .header-content {
                 text-align: center;
             }
             
-            .footer-img {
-                order: -1;
+            .header-details {
+                justify-content: center;
+            }
+            
+            .university {
+                justify-content: center;
+            }
+            
+            .connect-links {
+                justify-content: center;
             }
         }
-
-        /* Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card {
-            opacity: 0;
-            animation: fadeIn 0.6s forwards;
-        }
-
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        .card:nth-child(4) { animation-delay: 0.4s; }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="profile-container">
-            <img src="./photo/your-profile-image.jpg" alt="Profile" class="profile-img floating">
-            <h1>MD SAFIULLAH FORAJY</h1>
-            <p class="tagline">Computer Science & Engineering Student</p>
-            <p>Patuakhali Science and Technology University</p>
+        <div class="header-container">
+            <div class="profile-section">
+                <img src="./photo/your-profile-image.jpg" alt="Profile" class="profile-img">
+            </div>
+            
+            <div class="header-content">
+                <h1>MD SAFIULLAH FORAJY</h1>
+                <p class="title">Computer Science & Engineering Student</p>
+                
+                <div class="university">
+                    <i class="fas fa-university"></i>
+                    <span>Patuakhali Science and Technology University</span>
+                </div>
+                
+                <div class="header-details">
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>safiullahforagy@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>01312036374</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Rayapur, Nalchity, Jhalokathi</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="grid">
-            <div class="card">
-                <h2>About Me</h2>
-                <ul class="contact-list">
-                    <li>
-                        <div class="icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <strong>Email</strong>
-                            <p>safiullahforagy@gmail.com</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <strong>Phone</strong>
-                            <p>01312036374</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <strong>Address</strong>
-                            <p>Rayapur, Nalchity, Jhalokathi</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Patuakhali Science and Technology University</h3>
-                        <p>BSc in Computer Science & Engineering</p>
-                        <p class="date">2021 - Present</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Govt. Sayed Hatem Ali College</h3>
-                        <p>Higher Secondary Certificate (HSC)</p>
-                        <p class="date">2018 - 2020 | GPA: 5.0</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Rayapur S.A. Latif School</h3>
-                        <p>Secondary School Certificate (SSC)</p>
-                        <p class="date">2016 - 2018 | GPA: 5.0</p>
-                    </div>
+        <!-- Education Section -->
+        <section class="education-section">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Patuakhali Science and Technology University</h3>
+                    <p>BSc in Computer Science & Engineering</p>
+                    <p class="date">2021 - Present</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Govt. Sayed Hatem Ali College</h3>
+                    <p>Higher Secondary Certificate (HSC)</p>
+                    <p class="date">2018 - 2020 | GPA: 5.0</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Rayapur S.A. Latif School</h3>
+                    <p>Secondary School Certificate (SSC)</p>
+                    <p class="date">2016 - 2018 | GPA: 5.0</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="grid">
-            <div class="card">
-                <h2>Skills & Coding</h2>
-                <div class="skills-container">
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Algorithms</span>
-                    <span class="skill-tag">Data Structures</span>
-                    <span class="skill-tag">Problem Solving</span>
-                    <span class="skill-tag">Web Development</span>
-                </div>
-                <div class="social-links" style="margin-top: 2rem;">
-                    <a href="https://codeforces.com/profile/safiullahforagy" class="social-link" target="_blank">
-                        <i class="fas fa-code"></i>
-                        Codeforces
-                    </a>
-                    <a href="https://github.com/safiullah-foragy" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                </div>
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Algorithms</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Web Development</span>
             </div>
+            
+            <h2 style="margin-top: 2rem;">Achievements</h2>
+            <ul class="achievements-list">
+                <li>Perfect GPA in both SSC & HSC examinations</li>
+                <li>Active participant on Codeforces platform</li>
+            </ul>
+        </section>
 
-            <div class="card">
-                <h2>Connect With Me</h2>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/md-safiullah-1970922a2/" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100038036010802" class="social-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                        Facebook
-                    </a>
+        <!-- Connect Me Section -->
+        <section class="connect-section">
+            <h2>Connect With Me</h2>
+            <div class="connect-links">
+                <a href="https://www.linkedin.com/in/md-safiullah-1970922a2/" class="connect-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100038036010802" class="connect-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/sofi_the_overthinker/" class="connect-link" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://github.com/safiullah-foragy" class="connect-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://codeforces.com/profile/safiullahforagy" class="connect-link" target="_blank">
+                    <i class="fas fa-code"></i> Codeforces
+                </a>
+                <a href="mailto:safiullahforagy@gmail.com" class="connect-link">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">Project Title 1</h3>
+                    <p style="margin-bottom: 1rem; color: #64748b;">Short description of your project goes here.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
                 
-                <h2 style="margin-top: 2rem;">Achievements</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Academic Excellence</h3>
-                        <p>Perfect GPA in both SSC & HSC examinations</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Competitive Programming</h3>
-                        <p>Active participant on Codeforces platform</p>
+                <div class="project-card">
+                    <h3 class="project-title">Project Title 2</h3>
+                    <p style="margin-bottom: 1rem; color: #64748b;">Short description of your project goes here.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>MD SAFIULLAH FORAJY</h3>
-                <p>Computer Science & Engineering Student</p>
-            </div>
-            <img src="./photo/your-profile-image.jpg" alt="Profile" class="footer-img">
-        </div>
-        <div class="copyright">
-            &copy; 2023 All Rights Reserved
-        </div>
+    <footer style="text-align: center; padding: 2rem; color: #64748b;">
+        <p>&copy; 2023 MD SAFIULLAH FORAJY. All rights reserved.</p>
     </footer>
 </body>
 </html>
