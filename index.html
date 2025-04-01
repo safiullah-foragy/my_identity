@@ -329,6 +329,67 @@
             }
         }
     </style>
+
+<style>
+    /* Add gallery styles here */
+    .gallery-section {
+        margin: 4rem 0;
+        padding: 0 2rem;
+    }
+
+    .gallery-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .gallery-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #gallery-image {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        transition: opacity 0.3s ease;
+    }
+
+    .gallery-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .gallery-btn {
+        background: var(--primary);
+        border: none;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+
+    #image-counter {
+        font-size: 1.1rem;
+        color: var(--dark);
+        font-weight: 500;
+    }
+</style>
+
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -464,10 +525,61 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="gallery-section">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-box">
+                    <img src="./gallery/1.jpg" alt="Gallery Image" id="gallery-image">
+                    <div class="gallery-controls">
+                        <button class="gallery-btn" id="prev-btn">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <span id="image-counter">1/5</span>
+                        <button class="gallery-btn" id="next-btn">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer style="text-align: center; padding: 2rem; color: #64748b;">
         <p>&copy; 2023 MD SAFIULLAH FORAJY. All rights reserved.</p>
     </footer>
+    <script>
+        // Gallery functionality
+        let currentImage = 1;
+        const totalImages = 10; // Change this to your total number of images
+        const galleryImage = document.getElementById('gallery-image');
+        const imageCounter = document.getElementById('image-counter');
+
+        function updateGallery() {
+            galleryImage.style.opacity = 0;
+            setTimeout(() => {
+                galleryImage.src = `./gallery/${currentImage}.jpg`;
+                imageCounter.textContent = `${currentImage}/${totalImages}`;
+                galleryImage.style.opacity = 1;
+            }, 300);
+        }
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentImage = currentImage === totalImages ? 1 : currentImage + 1;
+            updateGallery();
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            currentImage = currentImage === 1 ? totalImages : currentImage - 1;
+            updateGallery();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') document.getElementById('next-btn').click();
+            if (e.key === 'ArrowLeft') document.getElementById('prev-btn').click();
+        });
+    </script>
 </body>
 </html>
